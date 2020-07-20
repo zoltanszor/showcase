@@ -1,0 +1,5 @@
+#! /bin/sh
+./justnumerics.pl -d I2Ci/I2C2 -p I2C2.input
+#./myresults.pl -d I2C -p I2C.input
+
+#perl mymultinumerics.pl -d I2C -p values.input

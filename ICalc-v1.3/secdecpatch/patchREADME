@@ -1,0 +1,22 @@
+Patch instructions for SecDec-2.1
+
+Copy the following files into the "SecDec-2.1/general" dir:
+- myCleanfiles
+- mycollect
+- mymultinumerics.pl
+- mynum
+- myresults.pl
+- myREADME (this is just a description)
+
+Exchange the original "formfortran.m" at "SecDec-2.1/general/src/subexp" with the patched one
+
+Edit the following files:
+- "mathlaunch.pl" at "SecDec-2.1/general/perlsrc"
+  line 27: $mathpath = `which math 2>&1`; -- exchange "math" with your preferred mathematica version like "math7"
+
+- "makemake.pm" at "SecDec-2.1/general/perlsrc"
+  line 95:       print MAKEFILE "FFLAGS   = -g -O2\n"; -- insert "-ffixed-line-length-none" to flags:       print MAKEFILE "FFLAGS   = -ffixed-line-length-none -g -O2\n";
+
+- copy "getinfo.pm  makeint.pm  polenumerics.pl  preparenumerics.pl" into SecDec-2.1/general/perlsrc
+
+Use SecDec! :)

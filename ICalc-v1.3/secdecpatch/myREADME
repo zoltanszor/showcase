@@ -1,0 +1,50 @@
+Commands starting with 'my' were written by ZT in order to facilitate the
+evaluation at multiple values of the input parameters.
+
+The perl script mymultinumerics.pl is used for running the integration
+set up by secdec. Switches:
+-d specifies the directory that contains the intput file 
+-p specifies the input file
+The latter has n+2 rows:
+the 1st row specifies the original input file that belongs to the .m
+mathematica file
+the 2nd row specifies the number of value sets at which the integral is
+to be evaluated (has to be <= n)
+the next n rows specify the value sets.
+
+The shell script 'mynum' shows example how to run mymultinumerics.pl
+
+Once the integrals are evaluated many new files are created. 
+The most important ones are
+np....input files in the specified directory.
+These are generated input files, copies of the original input file
+for each set of values.
+In the subdir specified in the input file there are .res files that
+contain the results of the integration. The file NAMEfull.res contains the
+collected results for all powers of epsilon. NAME starts with the name of
+the subdir, followed by the parameter values. In these files the output
+is not conveient for fitting the results. In order to produce an input
+table for the fitting, one can use the shell script 'mycollect', which
+shows an example how to run myresults.pl (has to be called from a working
+directory, such as ICS5!)
+cd workingdir
+../mycollect np1e0*
+collects results from input files npe1e0* in the working directory
+specified with the -d switch in the script and produces a file 'all.res'
+in the subdirectory specified at mymultinumerics.pl
+
+myCleanfiles:
+After running mycollect and save the results you can clean the working
+dir using the 'myCleanfiles' script. This script will delete all np1e0*
+files in the subdirectories (except .input files). The script has two
+arguments, the first one is for the directory which you want to clear,
+the second one is the name of the files.
+Example: you want to clear the ICS5d03d13l2 directory in the ICS5
+directory. Then type
+./myCleanfiles ICS5/ICS5d03d13l2 np1e0
+Important: You have to write np1e0 not np1e0*, and the script will
+delete all the np1e0* files.
+At the script will exit with error messages because the it wants to
+change into the batch*l0h0 files but these are not directories. This is
+a little mistake but all the other parts of the script works fine.
+

@@ -1,6 +1,6 @@
 This showcase repository contains two projects to present programming skills 
 in C++, Fortran90 and Python (and a little shell scripting).
-The code to found here were mostly written during my PhD time in the period 
+The code to be found here were mostly written during my PhD time in the period 
 of 2013 - 2015.
 Since both projects were intended for private use and aimed mostly to just do 
 their job, beautiful coding style was not really a priority, though they are 
@@ -11,9 +11,9 @@ This project consists various routines written in C++ and Python2 to perform
 massive integration jobs. 
 During my PhD I had to calculate many complicated singular integrals in several 
 thousand points. 
-The integration itself can be done numerically using the program named 'SecDec' 
-for example, however the program itself is not designed for mass calculations. 
-In addition, all the results produced be SecDec are not in an appropiate format 
+The integration itself can be done numerically using a third party program named 'SecDec' 
+for example, however it is not designed for mass calculations. 
+In addition, all the results produced be SecDec were not in an appropiate format 
 for further processing tasks. 
 Since this is a job, which cries for automation, I decided to build a framework 
 on top of SecDec, which can perform all tedious subtasks automated, such as distributing 
@@ -21,7 +21,7 @@ input files, running several integration routines parallel, collecting and trans
 results into different file formats with a 'push of a button'.
 ICalc certainly proved itself a very useful tool.
 
-antikt-cluster
+antikt-cluster:
 This project is written in Fortran90 and implements a newer way of jet clustering 
 for the so-called anti-kt jet clustering algorithm, which is used in particle physics.
 These kind of clustering algorithms take a set of particles as input and combine 

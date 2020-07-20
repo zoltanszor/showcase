@@ -4,7 +4,9 @@ The code to be found here were mostly written during my PhD time in the period
 of 2013 - 2015.
 Since both projects were intended for private use and aimed mostly to just do 
 their job, beautiful coding style was not really a priority, though they are 
-not too horrible.
+not too horrible. 
+You may use these codes, but I do not take any responsibility for their possible 
+malfunctions and harmful actions.
 
 ICalc:
 This project consists various routines written in C++ and Python2 to perform 
